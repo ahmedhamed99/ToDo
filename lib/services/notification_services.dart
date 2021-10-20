@@ -124,22 +124,6 @@ class NotifyHelper {
     return scheduledDate;
   }
 
-  periodicallyScheduledNotification(Task task) async {
-    var repeatInterval = RepeatInterval.everyMinute;
-    if (task.repeat == 'Daily') {
-      repeatInterval = RepeatInterval.daily;
-    } else if (task.repeat == 'Weekly') {
-      repeatInterval = RepeatInterval.weekly;
-    }
-    AndroidNotificationDetails androidPlatformChannelSpecifics =
-        const AndroidNotificationDetails('repeating channel id',
-            'repeating channel name', 'repeating description');
-    NotificationDetails platformChannelSpecifics =
-        NotificationDetails(android: androidPlatformChannelSpecifics);
-    await flutterLocalNotificationsPlugin.periodicallyShow(task.id!, task.title,
-        task.note,repeatInterval, platformChannelSpecifics,
-        androidAllowWhileIdle: true);
-  }
 
   cancelNotification(Task task) async {
     await flutterLocalNotificationsPlugin.cancel(task.id!);

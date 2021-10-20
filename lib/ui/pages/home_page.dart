@@ -268,9 +268,6 @@ class _HomePageState extends State<HomePage> {
                 int.parse(myTime.toString().split(':')[1]),
                 task,
               );
-              if(task.repeat == 'Daily' || task.repeat == 'Weekly'){
-              notifyHelper.periodicallyScheduledNotification(task);
-              }
               return AnimationConfiguration.staggeredList(
                 position: index,
                 duration: const Duration(milliseconds: 1300),
