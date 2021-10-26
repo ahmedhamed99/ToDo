@@ -128,6 +128,33 @@ class _NotificationScreenState extends State<NotificationScreen> {
                       const SizedBox(
                         height: 20,
                       ),
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.alarm,
+                            size: 30,
+                            color: Colors.white,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Task Time',
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "Your task starts at ${_payLoad.toString().split('|')[2]}",
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
                     ],
                   ),
                 ),

@@ -51,7 +51,7 @@ class NotifyHelper {
   displayNotification({required String title, required String body}) async {
     debugPrint('doing test');
     var androidPlatformChannelSpecifics = const AndroidNotificationDetails(
-        'your channel id', 'your channel name', 'your channel description',
+        'your channel id', 'your channel name', channelDescription:'your channel description',
         importance: Importance.max, priority: Priority.high);
     var iOSPlatformChannelSpecifics = const IOSNotificationDetails();
     var platformChannelSpecifics = NotificationDetails(
@@ -75,7 +75,7 @@ class NotifyHelper {
       _nextInstanceOfTenAM(hour, minutes, task),
       const NotificationDetails(
         android: AndroidNotificationDetails(
-            'your channel id', 'your channel name', 'your channel description'),
+            'your channel id', 'your channel name', channelDescription: 'your channel description'),
       ),
       androidAllowWhileIdle: true,
       uiLocalNotificationDateInterpretation:
